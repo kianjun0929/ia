@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>Register Form</title>
+<link rel="icon" type="image/png" href="Registericon.png"/>
+<link href="Register.css" rel="stylesheet"/>
+
+<script>
+	function validateForm() {
+		var x = document.forms ["myForm"]["fname"].value;
+		var inputVal = document.getElementById("subName");
+	if (x == ""){
+		inputVal.style.borderColor = "red";
+	return false;}
+	}
+
+	function validateForm1() {
+		var x = document.forms ["myForm"]["ftp"].value;
+		var inputVal = document.getElementById("subTP");
+	if (x == ""){
+		inputVal.style.borderColor = "red";
+	return false;}
+	}
+
+	function validateForm2() {
+		var x = document.forms ["myForm"]["faddress"].value;
+		var inputVal = document.getElementById("subAddress");
+	if (x == ""){
+		inputVal.style.borderColor = "red";
+	return false;}
+	}
+
+	function validateForm3() {
+		var x = document.forms ["myForm"]["ftown"].value;
+		var inputVal = document.getElementById("subTown");
+	if (x == ""){
+		inputVal.style.borderColor = "red";
+	return false;}
+	}
+
+	function validateForm4() {
+		var x = document.forms ["myForm"]["fphonenum"].value;
+		var inputVal = document.getElementById("subPhone");
+	if (x == ""){
+		inputVal.style.borderColor = "red";
+	return false;}
+	}
+
+	function validateForm5() {
+		var x = document.forms ["myForm"]["fdate"].value;
+		var inputVal = document.getElementById("subDate");
+	if (x == ""){
+		inputVal.style.borderColor = "red";
+	return false;}
+	}
+
+	function validateForm6() {
+		var x = document.forms ["myForm"]["fcourse"].value;
+		var inputVal = document.getElementById("subCourse");
+	if (x == ""){
+		inputVal.style.borderColor = "red";
+	return false;}
+	}
+
+	function validateForm7() {
+		var x = document.forms ["myForm"]["fintakecode"].value;
+		var inputVal = document.getElementById("subIntake");
+	if (x == ""){
+		inputVal.style.borderColor = "red";
+	return false;
+	}
+	}
+
+ 	function validateEmail(EmailAddress) { 
+    	var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(EmailAddress);
+ 	} 
+
+ 	function check() {
+    		if(validateEmail(document.getElementById('emailfield').value)){
+     		alert("Your form have already submitted !");
+     		window.location ="RegisterLast.html";
+ 		return true;
+    		}else{ alert("Email not valid ! and/or The content is not fully filled in !");
+			document.getElementById('emailfield').style.borderColor = "red";
+    	return false;}
+    }
+ 
+</script>
+
+</head>
+
+<body>
+<center><h1>Registration Form</h1></center>
+<form name="myForm" onsubmit="return validateEmail(EmailAddress)"  method="post">
+
+<b>Name :</b>&nbsp;<input type="text" name="fname" id="subName" placeholder="Your Name" size="40"/><br/>
+
+<b>TP Number :</b> &nbsp;<input type="text" name="ftp" id="subTP" placeholder="TP012345" maxlength="8"/><br/>
+
+<b>Gender :</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="fgender" id="subGender"/>Male&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="fgender" id="subGender"/>Female  <br/><br/><br/>
+
+<b>Address :</b> &nbsp;<input type="text" name="faddress" id="subAddress" placeholder="Address Line 1" maxlength="100"/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;<input type="text" name="Address Line 2" placeholder="Address Line 2" maxlength="100"/><br/>
+
+<b>Town/City :</b> &nbsp;<input type="text" name="ftown" id="subTown" placeholder="Town/City"/><br/>
+
+<b>Mobile Phone : </b>&nbsp; <input type="tel" name="fphonenum"  id="subPhone" placeholder="xxx-xxxxxxxx" size="5" minlength="10"  maxlength="14"/> 
+
+<b>Date of Birth :</b> &nbsp;  <input type="date" name="fdate" id="subDate"/><br/>
+
+<b>Course :</b> &nbsp; <input type="text" name="fcourse" id="subCourse" placeholder="Diploma In Information Technology"/><br/>
+
+<b>E-mail :</b> &nbsp; <input name="EmailAddress" type="text" placeholder="example@email.com" id="emailfield" /><br/>
+
+<b>Intake Code :</b> &nbsp; <input type="text" name="fintakecode" id="subIntake" placeholder="Example:UCDF1709ICT"/><br/>
+
+<b>Type of Player :</b><br/><br/>
+<input type="checkbox"  name="Single"/>Single <br/>
+<input type="checkbox" name="Double"/>Double <br/>
+<input type="checkbox" name="Mix"/>Mix <br/><br/>
+
+<center>
+ <input type = "submit" onclick = "check(),validateForm(),validateForm1(),validateForm2(),validateForm3(),validateForm4(),validateForm5(),validateForm6(),validateForm7()" value = "Submit"/>&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="reset"/>
+</center>
+</form>
+</body>
+
+</html>
